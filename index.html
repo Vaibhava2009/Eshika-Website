@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshika Kumari | Official Academic Portfolio</title>
+    <meta name="description" content="Official academic portfolio of Eshika Kumari — CBSE Class XII Arts Topper (92.2%), student at Patna College, Patna University.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-card: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --primary-blue: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #f59e0b;
+            --border-color: #cbd5e1;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0b0f19;
+            --bg-card: #131c31;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --primary-blue: #3b82f6;
+            --primary-light: #60a5fa;
+            --accent: #fbbf24;
+            --border-color: #334155;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-badge-icon {
+            background: var(--primary-blue);
+            color: white;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .logo-text h1 {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+        }
+
+        /* Hero Section - Optimized spacing to avoid empty gap */
+        .hero {
+            padding: 7rem 2rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: center;
+            min-height: calc(100vh - 70px);
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--accent);
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            line-height: 1.15;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h2 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            max-width: 540px;
+        }
+
+        .hero-image-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-card {
+            background: var(--bg-card);
+            padding: 1.2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .photo-frame {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            border: none;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-gmail {
+            background-color: #dc2626;
+            color: white;
+        }
+        .btn-gmail:hover {
+            background-color: #b91c1c;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-size: 0.95rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .stat {
+            font-size: 2.2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 0.4rem 0;
+        }
+
+        /* Vision Box */
+        .vision-box {
+            background: linear-gradient(135deg, var(--primary-blue), #0f172a);
+            color: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+        }
+        .vision-box h3 {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+        .vision-box p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Skill Tags */
+        .skill-tag {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            max-width: 1000px;
+            margin: 3rem auto;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .cta-section p {
+            color: var(--text-secondary);
+            max-width: 580px;
+            margin: 0 auto 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+        .protected-email {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.2rem 0;
+            display: inline-block;
+        }
+
+        /* Toast Notification */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: var(--primary-blue);
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px;
+            position: fixed;
+            z-index: 2000;
+            left: 50%;
+            bottom: 25px;
+            transform: translateX(-50%);
+            border: 1px solid var(--accent);
+            font-size: 0.9rem;
+        }
+        #toast.show {
+            visibility: visible;
+        }
+
+        footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 6rem;
+                min-height: auto;
+                gap: 2.5rem;
+            }
+            .hero p {
+                margin: 0 auto 1.5rem;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <div class="logo-badge-icon">EK</div>
+                <div class="logo-text">
+                    <h1>Eshika Kumari</h1>
+                    <span>Patna College, Patna University</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#notes">Request Notes</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle dark/light mode">
+                <svg id="themeIcon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge-pill">✨ CBSE Class XII Arts Topper (92.2%)</span>
+                <h2>Academic Excellence & <span>Curated Study Notes</span></h2>
+                <p>Welcome to the official portfolio of <strong>Eshika Kumari</strong>. Pursuing higher education at Patna College, Patna University. Request structured study notes instantly.</p>
+                <div class="btn-group">
+                    <a id="directMailBtn" href="#" class="btn btn-gmail">Request Notes via Email</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="photo-card">
+                    <div class="photo-frame">
+                        <img src="WhatsApp Image 2026-08-09 at 8.54.15 AM.jpeg" alt="Eshika Kumari portrait">
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.1rem;">Eshika Kumari</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem;">Patna College, Patna University</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Eshika Kumari</h2>
+            <p class="section-subtitle">Dedicated student committed to analytical thinking, humanities, and peer empowerment.</p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3 style="margin-bottom: 0.8rem;">Academic Background</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.8rem;">I am <strong>Eshika Kumari</strong>, studying at the prestigious <strong>Patna College, Patna University</strong>. Having topped my CBSE Class XII Arts stream with <strong>92.2%</strong>, I emphasize clarity of concepts and organized note-making.</p>
+                    <p style="color: var(--text-secondary);">Fluent in English, Hindi, and Bengali, I enjoy connecting with fellow students to make learning simpler and structured.</p>
+                </div>
+                <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div style="font-size: 3rem; margin-bottom: 0.8rem;">🏛️</div>
+                    <h3 style="margin-bottom: 0.4rem;">Patna College Heritage</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Studying at the crown jewel of Patna University, fostering intellectual depth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section id="vision">
+            <div class="vision-box">
+                <h3>💡 Academic Vision & Philosophy</h3>
+                <p>Education is most powerful when shared. As <strong>Eshika Kumari</strong>, my vision is to bridge the gap between complex conceptual reading and accessible exam preparation by providing structured revision materials.</p>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements">
+            <h2 class="section-title">Key Achievements</h2>
+            <p class="section-subtitle">Milestones that define academic dedication and consistency.</p>
+            
+            <div class="grid-3">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">🏆</div>
+                    <h3>CBSE Class XII Topper</h3>
+                    <div class="stat">92.2%</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Secured top honors in the Arts stream.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">🎓</div>
+                    <h3>Higher Education</h3>
+                    <div class="stat" style="font-size: 1.6rem; margin: 0.8rem 0;">Patna College</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Enrolled at Patna University, pursuing advanced humanities.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2.8rem; margin-bottom: 0.8rem;">📚</div>
+                    <h3>Student Support</h3>
+                    <div class="stat">100+</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Classmates and juniors guided with revision summaries.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Skills & Languages</h2>
+            <p class="section-subtitle">Core competencies and linguistic strengths.</p>
+            
+            <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem;">💡 Core Competencies</h3>
+                    <div>
+                        <span class="skill-tag">Fast Learner</span>
+                        <span class="skill-tag">Structured Note-Taking</span>
+                        <span class="skill-tag">Critical Analysis</span>
+                        <span class="skill-tag">Research & Synthesis</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem;">🗣️ Languages Known</h3>
+                    <div>
+                        <span class="skill-tag">English (Fluent)</span>
+                        <span class="skill-tag">Hindi (Native)</span>
+                        <span class="skill-tag">Bengali (Conversational)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notes Request Section -->
+        <section id="notes">
+            <div class="cta-section">
+                <h2>Request Verified Study Notes</h2>
+                <p>Juniors and classmates can request chapter summaries directly from <strong>Eshika Kumari</strong>. Click below to instantly open your email client.</p>
+                <div style="display: flex; justify-content: center;">
+                    <a id="directMailBtn2" href="#" class="btn btn-gmail" style="padding: 0.85rem 2.2rem;">
+                        📧 Request Notes via Email
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Have academic questions? Reach out to Eshika anytime.</p>
+            
+            <div class="contact-box">
+                <p style="color: var(--text-secondary);">Direct Email Address:</p>
+                <div class="protected-email" id="emailDisplay">eshikakumari15@gmail.com</div>
+                <div>
+                    <button class="btn btn-outline" id="copyEmailBtn">📋 Copy Email Address</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast">Email copied to clipboard successfully!</div>
+
+    <footer>
+        <p>&copy; 2026 Eshika Kumari. All rights reserved. | Patna College, Patna University.</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const userPart = "eshikakumari15";
+        const domainPart = "gmail.com";
+        const fullEmail = userPart + "@" + domainPart;
+
+        document.getElementById("emailDisplay").textContent = fullEmail;
+
+        const subjectEncoded = encodeURIComponent("Request for Notes");
+        const bodyEncoded = encodeURIComponent("Dear Eshika,\n\nI hope you are doing well. I am a student looking to request your study notes.\n\nCould you please share the available materials?\n\nThank you!");
+
+        const mailtoUrl = `mailto:${fullEmail}?subject=${subjectEncoded}&body=${bodyEncoded}`;
+        document.getElementById("directMailBtn").setAttribute("href", mailtoUrl);
+        document.getElementById("directMailBtn2").setAttribute("href", mailtoUrl);
+
+        // Copy Email functionality
+        document.getElementById("copyEmailBtn").addEventListener("click", () => {
+            navigator.clipboard.writeText(fullEmail).then(() => {
+                showToast();
+            }).catch(() => {
+                alert("Email: " + fullEmail);
+            });
+        });
+
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.classList.add("show");
+            setTimeout(() => { toast.classList.remove("show"); }, 3000);
+        }
+
+        // Theme Toggle
+        const themeToggleBtn = document.getElementById("themeToggleBtn");
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem("theme") || "light";
+        htmlElement.setAttribute("data-theme", savedTheme);
+
+        themeToggleBtn.addEventListener("click", () => {
+            const currentTheme = htmlElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            htmlElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+        });
+    </script>
+</body>
+</html>
